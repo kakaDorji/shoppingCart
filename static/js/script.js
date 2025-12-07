@@ -7,11 +7,11 @@ $(document).ready(function() {
 
     /* ///////////////////////////////////////
 
-    THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE, 
+    THESE FOLLOWING SCRIPTS ONLY FOR BASIC USAGE,
     For sliders, interactions and other
 
     */ ///////////////////////////////////////
-    
+
 
 	//////////////////////// Prevent closing from click inside dropdown
     $(document).on('click', '.dropdown-menu', function (e) {
@@ -51,10 +51,11 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip()
 	} // end if
 
+setTimeout(function() {
+    $('.message-container .alert').fadeOut(500);
+}, 5000);
 
 
-
-    
-}); 
+});
 // jquery end
 

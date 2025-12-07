@@ -1,6 +1,6 @@
 
 from pathlib import Path
-
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -32,6 +32,9 @@ INSTALLED_APPS = [
     'carts',
 ]
 
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -41,6 +44,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE_CLASSES = (
+    'django.middleware.csrf.CsrfViewMiddleware',
+)
 
 ROOT_URLCONF = 'greatCart.urls'
 
@@ -125,3 +132,19 @@ STATICFILES_DIRS=[
 # media url
 MEDIA_URL = '/media/'          # URL path to access uploaded files
 MEDIA_ROOT = BASE_DIR / 'media'  # Folder where uploaded files are stored
+
+# error is a boostrap class
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+  
+}
+
+# smpt configuration
+# tries to find/send the email form your backedn to the recipient
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='karsonam458@gmail.com'
+EMAIL_HOST_PASSWORD='bhptjlicifte ulym'
+EMAIL_USE_TLS=True
+

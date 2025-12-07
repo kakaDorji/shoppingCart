@@ -51,7 +51,11 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip()
 	} // end if
 
-
+setTimeout(function(){
+$('.alert').fadeOut(500,function(){
+    $(this).remove();
+})
+},3000)
 
 
     
