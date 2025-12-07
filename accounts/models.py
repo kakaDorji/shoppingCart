@@ -44,7 +44,7 @@ class Account(AbstractBaseUser):
 
 # custom user we need to we write someting 
     date_joined=models.DateTimeField(auto_now_add=True)
-    last_login=models.DateField(auto_now_add=True)
+    last_login=models.DateTimeField(auto_now=True)
     is_admin=models.BooleanField(default=False)
     is_active=models.BooleanField(default=False)
     is_staff=models.BooleanField(default=False)
@@ -59,7 +59,7 @@ class Account(AbstractBaseUser):
         return self.email
 
     # medatory method
-    def has_perm(self, param, obj=None):
+    def has_perm(self, perm, obj=None):
         return self.is_admin
    
     def has_module_perms(self,add_label):
